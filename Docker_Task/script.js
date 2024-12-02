@@ -1,4 +1,4 @@
-// Login Functionality
+// Login
 function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -10,7 +10,7 @@ function login() {
     }
   }
 
-   // Contact Alert
+   // Contact
    function contactAlert() {
     alert('Thank you for contacting us!');
   }
@@ -27,7 +27,7 @@ function login() {
         const recipes = data.recipes; // Accessing the 'products' array
         recipesContainer.innerHTML = ''; // Clear the loading message
   
-        recipes.forEach(recipes => { // Display the first 5 items
+        recipes.forEach(recipes => { // Display the items
           const recipeDiv = document.createElement('div');
           recipeDiv.classList.add('recipe');
   
@@ -51,12 +51,11 @@ function login() {
     const productsContainer = document.getElementById('products');
     productsContainer.innerHTML = '<p>Loading products...</p>';
   
-    fetch('https://dummyjson.com/products') // Updated API URL
+    fetch('https://dummyjson.com/products')
       .then(response => response.json())
       .then(data => {
-        const products = data.products; // Adjusted to match the 'products' array
-        productsContainer.innerHTML = ''; // Clear the loading message
-  
+        const products = data.products;
+        productsContainer.innerHTML = '';
         products.forEach(product => {
           const productDiv = document.createElement('div');
           productDiv.classList.add('product');
@@ -78,11 +77,11 @@ function login() {
     const usersContainer = document.getElementById('users');
     usersContainer.innerHTML = '<p>Loading products...</p>';
   
-    fetch('https://dummyjson.com/users') // Updated API URL
+    fetch('https://dummyjson.com/users')
       .then(response => response.json())
       .then(data => {
-        const users = data.users; // Adjusted to match the 'products' array
-        usersContainer.innerHTML = ''; // Clear the loading message
+        const users = data.users;
+        usersContainer.innerHTML = '';
   
         users.forEach(users => {
           const usersDiv = document.createElement('div');
