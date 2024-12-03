@@ -3,11 +3,11 @@ This project demonstrates the deployment of a static website using Docker. The w
 
 ## Deployment Steps
 
-### 1. Build the Docker image
+### Build the Docker image
 
 docker build -t static-website .    
 
-### 2. Run the Docker container
+### Run the Docker container
 
 docker run -d -p 8080:80 static-website
 
