@@ -1,3 +1,13 @@
+/* 2. Given an integer A, count and return the number of trailing zeroes.
+a. Example 1
+	i. Input: 18
+	ii. Output: 1
+	iii. Explanation: 18 in binary is represented as 10010, there is 1 trailing zero
+b. Example 2
+	i. Input: 8
+	ii. Output: 3
+	iii. Explanation: 8 in binary is represented as 1000, there are 3 trailing zeroes */
+
 //Time Complexity: O(log(n))
 //Space Complexity: O(1)
 
