@@ -1,3 +1,7 @@
+//Write a program to find the root of a number in the most efficient way.
+
+
+
 //Time Complexity: O(log(n))
 //Space Complexity: O(1)
 
