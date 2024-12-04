@@ -1,33 +1,31 @@
-public class Main {
-    public static String absolutePath(String path) {
-        String[] components = path.split("/");
+//Time Complexity: O(n)
+//Space Complexity: O(n)
+
+class Solution {
+    public String simplifyPath(String path) {
         
-        String[] resultArray = new String[components.length];
-        int index = 0;
+        Stack<String> stack = new Stack<>();
         
-        for (String component : components) {
-            if (component.equals("") || component.equals(".")) {
+        String[] directories = path.split("/");
+        
+        for (String dir : directories) { 
+            
+            if (dir.equals(".") || dir.isEmpty()) { 
+                
                 continue;
-            } else if (component.equals("..")) {
-                if (index > 0) {
-                    index--;
+                
+            } else if (dir.equals("..")) { 
+                
+                if (!stack.isEmpty()) {
+                    
+                    stack.pop();
                 }
-            } else {
-                resultArray[index++] = component;
+            } else { 
+                
+                
+                stack.push(dir);
             }
         }
-        
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < index; i++) {
-            result.append("/").append(resultArray[i]);
-        }
-        
-        return result.length() > 0 ? result.toString() : "/";
-    }
-    
-    public static void main(String[] args) {
-        String path = "/a/./b/../../c/";
-        String result = absolutePath(path);
-        System.out.println(result);
+        return "/" + String.join("/", stack); 
     }
 }
