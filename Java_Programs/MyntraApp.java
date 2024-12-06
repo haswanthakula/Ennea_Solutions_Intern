@@ -16,7 +16,6 @@ public class MyntraApp {
         inventory.put("Shoes", 3000.0);
     }
 
-    // Inventory methods
     public void addToInventory(String item, double price) {
         inventory.put(item, price);
         System.out.println(item + " added to the inventory with price ₹" + price);
@@ -48,7 +47,6 @@ public class MyntraApp {
         }
     }
 
-    // Cart methods
     public void addToCart(String item) {
         if (inventory.containsKey(item)) {
             shoppingCart.add(item);
@@ -70,7 +68,6 @@ public class MyntraApp {
         System.out.println("\nShopping Cart: " + shoppingCart);
     }
 
-    // Wishlist methods
     public void addToWishlist(String item) {
         if (inventory.containsKey(item)) {
             if (wishList.add(item)) {
@@ -147,7 +144,7 @@ public class MyntraApp {
                     String addItemName = scanner.nextLine();
                     System.out.print("Enter the price of " + addItemName + ": ₹");
                     double addItemPrice = scanner.nextDouble();
-                    scanner.nextLine(); // Consume newline
+                    scanner.nextLine();
                     app.addToInventory(addItemName, addItemPrice);
                     break;
 
@@ -162,7 +159,7 @@ public class MyntraApp {
                     String modifyItemName = scanner.nextLine();
                     System.out.print("Enter the new price of " + modifyItemName + ": ₹");
                     double newPrice = scanner.nextDouble();
-                    scanner.nextLine(); // Consume newline
+                    scanner.nextLine();
                     app.modifyInventory(modifyItemName, newPrice);
                     break;
 
