@@ -21,6 +21,14 @@ function add_butt() {
     }
   });
 
+  const tasks = document.querySelectorAll(".task-text");
+  for (const task of tasks) {
+    if (task.textContent === taskText) {
+      alert("Task already exists!");
+      return;
+    }
+  }
+
   const taskTextElement = document.createElement("span");
   taskTextElement.className = "task-text";
   taskTextElement.textContent = taskText;
